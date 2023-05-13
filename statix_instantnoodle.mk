@@ -11,10 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from instantnoodle device
 $(call inherit-product, device/oneplus/instantnoodle/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit StatiX common configuration
+$(call inherit-product, vendor/statix/config/common.mk)
+$(call inherit-product, vendor/statix/config/gsm.mk)
 
-PRODUCT_NAME := lineage_instantnoodle
+PRODUCT_NAME := statix_instantnoodle
 PRODUCT_DEVICE := instantnoodle
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -25,6 +26,7 @@ PRODUCT_SYSTEM_DEVICE := OnePlus8
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
+# Build fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="OnePlus8-user 13 RKQ1.211119.001 Q.f9c4de_1_5b9c release-keys" \
     TARGET_DEVICE=$(PRODUCT_SYSTEM_DEVICE) \
