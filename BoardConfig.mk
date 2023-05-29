@@ -16,7 +16,8 @@ TARGET_SCREEN_DENSITY := 450
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Properties
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/vendor.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/product.prop
 
 # Partitions
 ifneq ($(WITH_GMS),true)
